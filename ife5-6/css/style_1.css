@@ -1,0 +1,11 @@
+li {
+	margin-right: 30px;
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+.first ul {
+	display: flex;
+	
+}

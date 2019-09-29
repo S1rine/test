@@ -1,0 +1,49 @@
+body {
+	width: 1900px;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+li {
+	margin-right: 30px;
+}
+ul {
+	list-style: none;
+	display: flex;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+.first,
+.second {
+	border: 1px solid #d8d8d8;
+}
+.second li {
+	margin-right: 0;
+}
+.title {
+	background: #858585;
+	color: white;
+	height: 80px;
+}
+.title h1 {
+	padding: 19px 0 19px 20px;
+}
+.rightbar > div {
+	height: 150px;
+}
+.littletitle {
+	float: left;
+	height: 149px;
+	width: 150px;
+	line-height: 149px;
+	background: #d6d6d6;
+}
+.littletitle h2 {
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+.rightbar div p {
+	padding: 5px;
+}

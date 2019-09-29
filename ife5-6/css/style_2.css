@@ -1,0 +1,31 @@
+body {
+	width: 750px;
+}
+li {
+	margin-right: 30px;
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+.first ul {
+	display: flex;
+	
+}
+.title {
+	float: left;
+	width: 190px;
+	height: 720px;
+	background-color: #65a5fa;
+	color: white;
+}
+.rightbar {
+	float: right;
+}
+.title h1 {
+	text-align: center;
+	font-size: 40px;
+	font-weight: 400;
+	display: block;
+	padding-top: 20px;
+}
