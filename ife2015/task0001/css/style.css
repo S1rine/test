@@ -1,0 +1,169 @@
+.container {
+	width: 980px;
+	margin: 0 auto;
+}
+a {
+	color: #ffffff;
+}
+/* 顶部栏 */
+.topbar {
+	position: relative;
+	height: 80px;
+	width: 100%;
+	background-color: #522a5c;
+}
+.topbar_logo {
+	float: left;
+	margin-top: 30px;
+}
+.topbar_logo span {
+	font-size: 30px;
+	color: #fff;
+}
+.topbar_menu a {
+	color: #fff;
+}
+.topbar_menu {
+	float: right;
+	font-family: "宋体",Arial,sans-serif;
+	font-size: 20px;
+	color: #fff;
+	margin-top: 55px;
+	display: flex;
+}
+.topbar_menu li {
+	margin-right: 28px;
+}
+.github_logo {
+	position: absolute;
+	right: 10px;
+	bottom: 0;
+}
+/* 顶部栏 */
+
+.header {
+	background: url(../img/banner-bg.jpg);
+	background-size: 100%;
+	height: 833px;
+}
+.article {
+	background: linear-gradient(to bottom, rgba(255,255,255,.3),
+				rgba(255,255,255,.1) 75%,rgba(255,255,255,0));
+	color: #fff;
+	width: 400px;
+	float: right;
+	margin-top: 651px;
+}
+.article h1 {
+	font-size: 20px;
+	color: #fff;
+	text-align: right;
+	padding: 15px;
+	padding-bottom: 15px;
+}
+.article p {
+	font-size: 14px;
+	padding: 20px;
+	padding-top: 0;
+	line-height: 150%;
+}
+/* 头部 */
+.body_main {
+	background: #eee;
+	height: 500px;
+}
+.article_block {
+	display: flex;
+}
+.article_block li {
+	width: 320px;
+	background: #fff;
+	margin-top: 10px;
+}
+.article_block li + li{
+	margin-left: 10px;
+}
+.article_block li img {
+	padding: 10px;
+	padding-bottom: 15px;
+}
+.article_block li p {
+	font-size: 14px;
+	line-height: 170%;
+	padding: 0 30px 25px 30px;
+}
+/* 主要内容 */
+.body_bottom {
+	text-align: center;
+	height: 550px;
+}
+.self_icon {
+	margin-top: -50px;
+	margin-bottom: 50px;
+}
+.body_bottom h1 {
+	font-family: Century;
+	font-size: 30px;
+}
+.body_bottom p {
+	display: inline-block;
+	margin-top: 20px;
+	font-size: 16px;
+	width: 600px;
+	line-height: 150%;
+}
+/* 主要内容底部 */
+.footer {	
+	font-size: 12px;
+	position: relative;
+	background: #000;
+	height: 400px;
+	color: #fff;
+}
+.underline {
+	z-index: 1;
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	border-bottom: 1px solid #333;
+}
+.headline {
+	width: 200px;
+	height: 40px;
+	margin: 0 auto;
+}
+.headline ul {
+	display: flex;
+}
+.headline ul li {
+	z-index: 2;
+	font-size: 15px;
+	margin: 10px auto;
+}
+.foot_list {
+	display: flex;
+	padding-top: 30px;
+}
+.foot_list li + li {
+	padding-left: 160px;
+}
+.foot_list dt {
+	font-size: 14px;
+	color: #ccc;
+	padding-bottom: 25px;
+}
+.foot_list dd + dd {
+	padding-top: 10px;
+}
+.foot_list a:hover {
+	text-decoration: underline;
+}
+.footline {
+	position: absolute;
+	bottom: 0;
+	width: 980px;
+	text-align: center;
+}
+.footline p {
+	margin-bottom: 20px;
+}
