@@ -1,11 +1,13 @@
 # IFE2 day2
 
-### 首个HTML文件：
+[toc]
+
+## 首个HTML文件：
 
 
 ![image](https://github.com/Severu5/Hello-World/blob/master/images/img1.png)
 
-### 代码:
+## 代码:
 ```html
 <h1>简历</h1>
 <p>姓名：张三</p>
@@ -14,7 +16,7 @@
 <p>项目经验：无</p>
 ```
 
-### 验证部分：
+## 验证部分：
 
 * HTML是什么，HTML5是什么
 

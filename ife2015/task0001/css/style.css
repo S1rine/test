@@ -5,6 +5,9 @@
 a {
 	color: #ffffff;
 }
+p {
+	text-align: justify;
+}
 /* 顶部栏 */
 .topbar {
 	position: relative;
