@@ -1,7 +1,5 @@
 # IFE2 day2
 
-[toc]
-
 ## 首个HTML文件：
 
 
