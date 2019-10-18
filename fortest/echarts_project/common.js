@@ -1,4 +1,17 @@
-
+function checkvalue(){
+    var items = document.getElementsByTagName("input");
+    var flag=true;
+    for(var i=0;i<items.length;i++){
+        if(items[i].value == ''){
+            flag=false;
+        }
+    }
+    if(flag==true){
+        document.getElementsByTagName("button")[0].removeAttribute("disabled");
+    }else{
+        document.getElementsByTagName("button")[0].setAttribute("disabled", true);
+    }
+}
 var majors = [
     ["major1", "major2", "major3", "major4"],
     ["major5", "major6", "major7", "major8", "major9"],

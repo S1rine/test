@@ -8,7 +8,7 @@
     <title>企业签到页面</title>
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./companycheckin.css">
+    <link rel="stylesheet" href="./common.css">
 </head>
 
 <body>
@@ -17,19 +17,19 @@
         <div class="main-area">
 
             <h1>企业入场登记</h1>
-            <form class="form-area" id="form-area">
+            <form class="form-area">
                 <div class="left">
-                    <div class="company-name">企业名称: </div>
-                    <div class="company-type">企业类型: </div>
-                    <div class="company-name">联系人: </div>
-                    <div class="company-type">联系电话: </div>
+                    <div>企业名称: </div>
+                    <div>企业类型: </div>
+                    <div>联系人: </div>
+                    <div>联系电话: </div>
                 </div>
                 <div class="right">
                     <div class="form-item">
-                        <input name="company-name" type="text" oninput="checkvalue(this.value)">
+                        <input name="companyName" type="text" oninput="checkvalue()">
                     </div>
                     <div class="form-item">
-                        <select name="company-type" id="company-type" class="choose-items">
+                        <select name="companyType">
                             <option value="1">类别1</option>
                             <option value="2">类别2</option>
                             <option value="3">类别3</option>
@@ -38,19 +38,17 @@
                         </select>
                     </div>
                     <div class="form-item">
-                        <input name="company-name" type="text" oninput="checkvalue(this.value)">
+                        <input name="contact" type="text" oninput="checkvalue()">
                     </div>
                     <div class="form-item">
-                        <input name="company-name" type="text" oninput="checkvalue(this.value)">
+                        <input name="phoneNumber" type="text" oninput="checkvalue()">
                     </div>
                 </div>
-                <button disabled onclick="addCompany()">签到</button>
-                <!-- <button onclick="myEchartsReady()">完成</button> -->
+                <button disabled>签到</button>
             </form>
         </div>
     </div>
     <script src="./common.js"></script>
-    <script src="./companycheckin.js"></script>
 </body>
 
 </html>

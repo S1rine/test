@@ -1,5 +1,5 @@
 body {
-    background: #c1bdba;
+    background: rgba(236, 220, 208,.5);
 }
 
 .container {
@@ -43,6 +43,6 @@ body {
 }
 
 .main-area li a:hover {
-    background: #179b77;
+    background: #3399FF;
     color: #fff;
 }
