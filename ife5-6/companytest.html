@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECharts</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./companytest.css">
+</head>
+
+<body>
+    <!-- 表单部分 -->
+    <h1>企业入场登记</h1>
+    <div>
+        <form class="form-area" id="form-area">
+            <div class="left">
+                <div class="company-name">企业名称:</div>
+                <div class="company-type">企业类型:</div>
+            </div>
+            <div class="right">
+                <div class="form-item">
+                    <input name="company-name" type="text" oninput="checkvalue(this.value)">
+                </div>
+                <div class="form-item">
+                    <select name="company-type" id="company-type" class="choose-items">
+                        <option value="1">类别1</option>
+                        <option value="2">类别2</option>
+                        <option value="3">类别3</option>
+                        <option value="4">类别4</option>
+                        <option value="5">类别5</option>
+                    </select>
+                </div>
+            </div>
+            <button disabled onclick="addCompany()">签到</button>
+            <!-- <button onclick="myEchartsReady()">完成</button> -->
+        </form>
+    </div>
+    <script src="./common.js"></script>
+</body>
+
+</html>
