@@ -1,0 +1,48 @@
+body {
+    background: #c1bdba;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main-area {
+    background: rgba(19, 35, 47, .9);
+    padding: 40px;
+    max-width:600px;
+    margin:40px auto;
+    border-radius:4px;
+    box-shadow:0 4px 10px 4px rgba(19, 35, 47, .3);
+}
+
+.main-area ul li {
+    width: 44%;
+    margin: 20px 16px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.23);
+    color: #a0b3b0;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+@media screen and (max-width: 815px) {
+    .main-area ul li {
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+
+.main-area li a {
+    display: block;
+    width: 100%;
+    line-height: 54px;
+    transition: .5s ease;
+}
+
+.main-area li a:hover {
+    background: #179b77;
+    color: #fff;
+}

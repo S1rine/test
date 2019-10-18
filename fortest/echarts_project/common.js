@@ -1,10 +1,4 @@
-function checkvalue(x) {
-    if (x !== '') {
-        document.getElementsByTagName('button')[0].removeAttribute("disabled");
-    } else {
-        document.getElementsByTagName("button")[0].setAttribute("disabled", 'true');
-    }
-}
+
 var majors = [
     ["major1", "major2", "major3", "major4"],
     ["major5", "major6", "major7", "major8", "major9"],
