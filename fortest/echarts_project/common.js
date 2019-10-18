@@ -20,7 +20,7 @@ var majors = [
     ["major15", "major16", "major17", "major18"]
 ];
 function checkschool(x) {
-    var selects = document.getElementById("student-major");
+    var selects = document.getElementById("studentMajor");
     if (selects.childElementCount != 0) {
         // for(var i=0;i<selects.childElementCount;i++){
         //     selects.childNodes
