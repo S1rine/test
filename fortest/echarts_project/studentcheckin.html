@@ -32,7 +32,7 @@
                             <input name="student-name" type="text" oninput="checkvalue()">
                         </div>
                         <div class="form-item">
-                            <select name="student-school" onchange="checkschool()">
+                            <select name="student-school" onchange="checkschool(this.value)">
                                 <option value="1">学院1</option>
                                 <option value="2">学院2</option>
                                 <option value="3">学院3</option>
@@ -41,7 +41,7 @@
                             </select>
                         </div>
                         <div class="form-item">
-                            <select name="student-major" class="choose-items">
+                            <select name="student-major" id="studentMajor" class="choose-items">
                                 <option value="1">major1</option>
                                 <option value="2">major2</option>
                                 <option value="3">major3</option>
