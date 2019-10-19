@@ -1,15 +1,16 @@
 function checkvalue(){
     var items = document.getElementsByTagName("input");
     var flag=true;
+    var button = document.getElementsByTagName("button")[0];
     for(var i=0;i<items.length;i++){
         if(items[i].value == ''){
             flag=false;
         }
     }
     if(flag==true){
-        document.getElementsByTagName("button")[0].removeAttribute("disabled");
+        button.removeAttribute("disabled");
     }else{
-        document.getElementsByTagName("button")[0].setAttribute("disabled", true);
+        button.setAttribute("disabled", true);
     }
 }
 var majors = [
@@ -21,7 +22,6 @@ var majors = [
 ];
 function checkunit(x) {
     var selects = document.getElementById("studentMajor");
-    console.log(selects);
     if (selects.childElementCount != 0) {
         selects.options.length = 0;
     }

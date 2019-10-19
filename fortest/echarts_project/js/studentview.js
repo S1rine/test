@@ -32,7 +32,8 @@ for (var i = 0; i < chooseArea.children.length; i++) {
     })(child, i);
 }
 var viewtypenum = 0;
-var databyunit = [{
+var databyunit = [
+    {
     value: 111,
     name: '学院1'
 }, {
@@ -48,7 +49,8 @@ var databyunit = [{
     value: 190,
     name: '学院5'
 }, ];
-var databymajor = [{
+var databymajor = [
+    {
         name: 'major1',
         value: 20
     },
@@ -78,15 +80,15 @@ var databyboth = [{
         "major2": 10,
         "major3": 30,
         "major4": 20,
-        "major_sum":4,
+        "major_sum": 4,
     },
-    "学院2":{
+    "学院2": {
         "major5": 35,
         "major6": 22,
         "major7": 34,
         "major8": 16,
         "major9": 16,
-        "major_sum":5,
+        "major_sum": 5,
     },
     "学院3": {
         "major10": 45,
@@ -108,19 +110,7 @@ var databyboth = [{
     }
 }];
 var databyboth_value = Object.values(databyboth[0]);
-console.log(Object.values(databyboth[0]));
-
-console.log(Object.keys(databyboth[0]));
-for(var key in databyboth[0]){
-    console.log(key);
-    console.log(databyboth[0][key]);
-}
-var databyboth_key=Object.keys(databyboth[0]);
-// for(var i=0,sum=0,flag=0;i<majorLength;i++){
-//     databyboth_flag[i]=flag;
-    
-// }
-// console.log(databyboth_final);
+var databyboth_key = Object.keys(databyboth[0]);
 var databymajor_name = [];
 var databymajor_value = [];
 for (var i = 0; i < databymajor.length; i++) {
@@ -260,33 +250,14 @@ function viewbyboth(myChart) {
         majorLength += databyboth[0][key]["major_sum"];
     }
     console.log(majorLength);
-    var databyboth_final = new Array (majorLength);
+    var databyboth_final = new Array(majorLength);
     console.log(databyboth_final);
     for (var i = 0; i < majorLength; i++) {
-        databyboth_final[i] = new Array (databyboth_key.length);
+        databyboth_final[i] = new Array(databyboth_key.length);
         console.log(databyboth_final);
-        // var major_len = databyboth[0][databyboth_key[0]]["sum"];
-        // console.log(major_len);
-        // if(i<major_len){
-        //     databyboth_final[i][0]
-        // }
-        // if (i < major_len) {
-        //     data1[i][0] = 0;
-        // } else if (i < (major_len += majors[1].length)) {
-        //     data1[i][1] = 0;
-        // } else if (i < (major_len += majors[2].length)) {
-        //     data1[i][2] = 0;
-        // } else if (i < (major_len += majors[3].length)) {
-        //     data1[i][3] = 0;
-        // } else {
-        //     data1[i][4] = 0;
-        // }
-        // for(var j = 0; j < 5;j++){
-        //     data1[i][j]=0;
-        // }
     }
     databyboth_final[1].length = 5;
-    for (var i = 0,sum=0; i < databyboth_key.length; i++) {
+    for (var i = 0, sum = 0; i < databyboth_key.length; i++) {
         for (var j = 0; j < databyboth_value[i]["major_sum"]; j++) {
             console.log(databyboth_value[i]);
             console.log(Object.values(databyboth_value[i])[j]);
@@ -317,15 +288,8 @@ function viewbyboth(myChart) {
         },
         yAxis: {
             type: 'value',
-            // axisLabel: {
-            //     show: true,
-            //     textStyle: {
-            //         fontSize: 20 //更改坐标轴文字大小
-            //     }
-            // }
         },
-        series: [
-            {
+        series: [{
                 name: 'major1',
                 type: 'bar',
                 stack: '总量',
@@ -604,20 +568,14 @@ function viewbyboth(myChart) {
         ]
     };
     var series = option["series"];
-    // console.log(series[0].data);
     var fun = function (params) {
         var data = 0;
-        // console.log(series[0].data[params.dataIndex]);
-        // console.log(params);
         for (var i = 0; i < series.length; i++) {
             var x = series[i].data[params.dataIndex];
-            // console.log(series[i].data[params.dataIndex]);
             if (typeof (x) != 'number')
                 continue;
-            // console.log(typeof (x));
             data += series[i].data[params.dataIndex];
         }
-        // console.log(data);
         return '合计: ' + data;
 
     }
@@ -626,411 +584,4 @@ function viewbyboth(myChart) {
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
-}
-var data2 = new Array(5);
-for (var i = 0; i < 5; i++) {
-    data2[i] = 0;
-}
-
-function changeData1(value1, value2) {
-    data1[value2 - 1][value1 - 1]++;
-}
-
-function addStudent() {
-    var myChart1 = echarts.init(document.getElementById("main_1"));
-    var myChart2 = echarts.init(document.getElementById("main_2"));
-
-    var datas = document.getElementById("form-area");
-    var dataA = datas.getElementsByClassName("form-item");
-    var item1 = dataA[0].getElementsByTagName("input")[0].value;
-    var item2 = dataA[1].getElementsByTagName("select")[0].value;
-    var item3 = dataA[2].getElementsByTagName("select")[0].value;
-    data2[item2 - 1]++;
-    changeData1(item2, item3);
-    // console.log(data1);
-    var option1 = {
-        title: {
-            text: '学院专业统计',
-            left: 'center',
-            top: -15,
-            textStyle: {
-                color: '#000',
-                fontSize: 25
-            },
-        },
-        xAxis: {
-            type: 'category',
-            data: ['学院1', '学院2', '学院3', '学院4', '学院5'],
-            axisLabel: {
-                show: true,
-                textStyle: {
-                    fontSize: 20 //更改坐标轴文字大小
-                }
-            }
-        },
-        yAxis: {
-            type: 'value',
-            axisLabel: {
-                show: true,
-                textStyle: {
-                    fontSize: 20 //更改坐标轴文字大小
-                }
-            }
-        },
-        series: [{
-                name: 'major1',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[0] //[100, , , , ]
-            },
-            {
-                name: 'major2',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[1]
-            },
-            {
-                name: 'major3',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[2]
-            },
-            {
-                name: 'major4',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[3]
-            },
-            // 学院1
-            {
-                name: 'major5',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[4]
-            },
-            {
-                name: 'major6',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[5]
-            },
-            {
-                name: 'major7',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[6]
-            },
-            {
-                name: 'major8',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[7]
-            },
-            {
-                name: 'major9',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[8]
-            },
-            // 学院2
-            {
-                name: 'major10',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[9]
-            },
-            {
-                name: 'major11',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[10]
-            },
-            // 学院3
-            {
-                name: 'major12',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[11]
-            },
-            {
-                name: 'major13',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[12]
-            },
-            {
-                name: 'major14',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[13]
-            },
-            // 学院4
-            {
-                name: 'major15',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[14]
-            },
-            {
-                name: 'major16',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[15]
-            },
-            {
-                name: 'major17',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[16]
-            },
-            {
-                name: 'major18',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        fontSize: 18,
-                        formatter: '{a}: {c}',
-                        show: true,
-                        position: 'inside'
-                    }
-                },
-                data: data1[17]
-            },
-            // 学院5
-            {
-                name: '合计',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'top',
-                        textStyle: {
-                            color: '#000'
-                        },
-                        formatter: '',
-                        fontSize: 18
-                    }
-                },
-                data: [
-                    0, 0, 0, 0, 0
-                ] //思路一：给series集合末尾多加一栏用于展示合计，但是值都是0；缺点：必须根据xAxis的data生成一组为空的数据，且tooltip不能加trigger: 'axis',这个条件，不然会展示合计：0
-            }
-        ]
-    };
-
-    var option2 = {
-        title: {
-            text: '学院统计',
-            left: 'center',
-            top: 20,
-            textStyle: {
-                color: '#000',
-                fontSize: 25
-            }
-        },
-        series: [{
-            name: '学生统计',
-            type: 'pie',
-            radius: '55%',
-            data: [{
-                    value: data2[0],
-                    name: '学院1'
-                },
-                {
-                    value: data2[1],
-                    name: '学院2'
-                },
-                {
-                    value: data2[2],
-                    name: '学院3'
-                },
-                {
-                    value: data2[3],
-                    name: '学院4'
-                },
-                {
-                    value: data2[4],
-                    name: '学院5'
-                },
-            ],
-            label: {
-                normal: {
-                    textStyle: {
-                        fontSize: 20
-                    },
-                    show: true,
-                    formatter: "{b} : {c} ({d}%)"
-                }
-            },
-            itemStyle: {
-                emphasis: {
-                    shadowBlur: 100,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            }
-        }]
-    }
-
-    var series = option1["series"];
-    // console.log(series[0].data);
-    var fun = function (params) {
-        var data = 0;
-        // console.log(series[0].data[params.dataIndex]);
-        // console.log(params);
-        for (var i = 0; i < series.length; i++) {
-            var x = series[i].data[params.dataIndex];
-            // console.log(series[i].data[params.dataIndex]);
-            if (typeof (x) != 'number')
-                continue;
-            // console.log(typeof (x));
-            data += series[i].data[params.dataIndex];
-        }
-        // console.log(data);
-        return '合计: ' + data;
-
-    }
-    //加载页面时候替换最后一个series的formatter
-    series[series.length - 1]["label"]["normal"]["formatter"] = fun;
-
-    // 使用刚指定的配置项和数据显示图表。
-    myChart1.setOption(option1);
-    // myChart2.setOption(option2);
 }
