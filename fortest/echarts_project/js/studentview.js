@@ -71,6 +71,56 @@ var databymajor = [{
         value: 37
     }
 ]
+
+var databyboth = [{
+    "学院1": {
+        "major1": 15,
+        "major2": 10,
+        "major3": 30,
+        "major4": 20,
+        "major_sum":4,
+    },
+    "学院2":{
+        "major5": 35,
+        "major6": 22,
+        "major7": 34,
+        "major8": 16,
+        "major9": 16,
+        "major_sum":5,
+    },
+    "学院3": {
+        "major10": 45,
+        "major11": 32,
+        "major_sum": 2,
+    },
+    "学院4": {
+        "major12": 65,
+        "major13": 52,
+        "major14": 74,
+        "major_sum": 3,
+    },
+    "学院5": {
+        "major15": 45,
+        "major16": 32,
+        "major17": 24,
+        "major18": 26,
+        "major_sum": 4,
+    }
+}];
+var databyboth_value = Object.values(databyboth[0]);
+console.log(Object.values(databyboth[0]));
+
+console.log(Object.keys(databyboth[0]));
+for(var key in databyboth[0]){
+    console.log(key);
+    console.log(databyboth[0][key]);
+}
+var databyboth_key=Object.keys(databyboth[0]);
+// for(var i=0,sum=0,flag=0;i<majorLength;i++){
+//     databyboth_flag[i]=flag;
+    
+// }
+// console.log(databyboth_final);
 var databymajor_name = [];
 var databymajor_value = [];
 for (var i = 0; i < databymajor.length; i++) {
@@ -203,31 +253,379 @@ function viewbymajor(myChart) {
     myChart.setOption(option);
 }
 
-function viewbyboth(myChart){
-    
-}
-var majorLength = 0;
-for (var i = 0; i < majors.length; i++) {
-    majorLength += majors[i].length;
-}
-var data1 = new Array(majorLength);
-for (var i = 0; i < majorLength; i++) {
-    data1[i] = new Array(majors.length);
-    var major_len = majors[0].length;
-    if (i < major_len) {
-        data1[i][0] = 0;
-    } else if (i < (major_len += majors[1].length)) {
-        data1[i][1] = 0;
-    } else if (i < (major_len += majors[2].length)) {
-        data1[i][2] = 0;
-    } else if (i < (major_len += majors[3].length)) {
-        data1[i][3] = 0;
-    } else {
-        data1[i][4] = 0;
+function viewbyboth(myChart) {
+    var majorLength = 0;
+    for (var key in databyboth[0]) {
+        console.log(databyboth[0][key]["major_sum"] - 1);
+        majorLength += databyboth[0][key]["major_sum"];
     }
-    // for(var j = 0; j < 5;j++){
-    //     data1[i][j]=0;
-    // }
+    console.log(majorLength);
+    var databyboth_final = new Array (majorLength);
+    console.log(databyboth_final);
+    for (var i = 0; i < majorLength; i++) {
+        databyboth_final[i] = new Array (databyboth_key.length);
+        console.log(databyboth_final);
+        // var major_len = databyboth[0][databyboth_key[0]]["sum"];
+        // console.log(major_len);
+        // if(i<major_len){
+        //     databyboth_final[i][0]
+        // }
+        // if (i < major_len) {
+        //     data1[i][0] = 0;
+        // } else if (i < (major_len += majors[1].length)) {
+        //     data1[i][1] = 0;
+        // } else if (i < (major_len += majors[2].length)) {
+        //     data1[i][2] = 0;
+        // } else if (i < (major_len += majors[3].length)) {
+        //     data1[i][3] = 0;
+        // } else {
+        //     data1[i][4] = 0;
+        // }
+        // for(var j = 0; j < 5;j++){
+        //     data1[i][j]=0;
+        // }
+    }
+    databyboth_final[1].length = 5;
+    for (var i = 0,sum=0; i < databyboth_key.length; i++) {
+        for (var j = 0; j < databyboth_value[i]["major_sum"]; j++) {
+            console.log(databyboth_value[i]);
+            console.log(Object.values(databyboth_value[i])[j]);
+            databyboth_final[sum++][i] = Object.values(databyboth_value[i])[j];
+            console.log("1");
+        }
+    }
+    console.log(databyboth_final);
+    var option = {
+        title: {
+            text: '学院专业统计',
+            left: 'center',
+            top: 20,
+            textStyle: {
+                color: '#000',
+                fontSize: 25
+            },
+        },
+        xAxis: {
+            type: 'category',
+            data: ['学院1', '学院2', '学院3', '学院4', '学院5'],
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    fontSize: 20 //更改坐标轴文字大小
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            // axisLabel: {
+            //     show: true,
+            //     textStyle: {
+            //         fontSize: 20 //更改坐标轴文字大小
+            //     }
+            // }
+        },
+        series: [
+            {
+                name: 'major1',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[0] //[100, , , , ]
+            },
+            {
+                name: 'major2',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[1]
+            },
+            {
+                name: 'major3',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[2]
+            },
+            {
+                name: 'major4',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[3]
+            },
+            // 学院1
+            {
+                name: 'major5',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[4]
+            },
+            {
+                name: 'major6',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[5]
+            },
+            {
+                name: 'major7',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[6]
+            },
+            {
+                name: 'major8',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[7]
+            },
+            {
+                name: 'major9',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[8]
+            },
+            // 学院2
+            {
+                name: 'major10',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[9]
+            },
+            {
+                name: 'major11',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[10]
+            },
+            // 学院3
+            {
+                name: 'major12',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[11]
+            },
+            {
+                name: 'major13',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[12]
+            },
+            {
+                name: 'major14',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[13]
+            },
+            // 学院4
+            {
+                name: 'major15',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[14]
+            },
+            {
+                name: 'major16',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[15]
+            },
+            {
+                name: 'major17',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[16]
+            },
+            {
+                name: 'major18',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        fontSize: 18,
+                        formatter: '{a}: {c}',
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data: databyboth_final[17]
+            },
+            // 学院5
+            {
+                name: '合计',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top',
+                        textStyle: {
+                            color: '#000'
+                        },
+                        formatter: '',
+                        fontSize: 18
+                    }
+                },
+                data: [
+                    0, 0, 0, 0, 0
+                ] //思路一：给series集合末尾多加一栏用于展示合计，但是值都是0；缺点：必须根据xAxis的data生成一组为空的数据，且tooltip不能加trigger: 'axis',这个条件，不然会展示合计：0
+            }
+        ]
+    };
+    var series = option["series"];
+    // console.log(series[0].data);
+    var fun = function (params) {
+        var data = 0;
+        // console.log(series[0].data[params.dataIndex]);
+        // console.log(params);
+        for (var i = 0; i < series.length; i++) {
+            var x = series[i].data[params.dataIndex];
+            // console.log(series[i].data[params.dataIndex]);
+            if (typeof (x) != 'number')
+                continue;
+            // console.log(typeof (x));
+            data += series[i].data[params.dataIndex];
+        }
+        // console.log(data);
+        return '合计: ' + data;
+
+    }
+    //加载页面时候替换最后一个series的formatter
+    series[series.length - 1]["label"]["normal"]["formatter"] = fun;
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
 }
 var data2 = new Array(5);
 for (var i = 0; i < 5; i++) {
