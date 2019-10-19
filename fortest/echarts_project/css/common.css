@@ -33,6 +33,7 @@ h1 {
     transition: all 0.25s ease;
     font-size: 22px;
 }
+
 @media screen and (max-width: 815px) {
     h1 {
         font-size: .5rem;
@@ -42,6 +43,7 @@ h1 {
         font-size: 16px;
     }
 }
+
 .form-area .right {
     overflow: hidden;
     padding: 0 0 0 1em;
@@ -81,7 +83,7 @@ h1 {
     background: rgba(19, 35, 47, .9);
 }
 
-.form-area button {
+button {
     width: 100%;
     padding: 15px 0;
     cursor: pointer;
@@ -98,12 +100,27 @@ h1 {
     -webkit-appearance: none;
 }
 
-.form-area button:hover {
+button:hover {
     background: #176CBF;
 }
 
-.form-area button:disabled {
+button:disabled {
     background: rgba(255, 255, 255, 0.23);
     color: #a0b3b0;
     cursor: not-allowed;
+}
+
+.choose-area button {
+    width: 30%;
+    margin: 0 15px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, .23);
+    color: #a0b3b0;
+}
+.choose-area button:hover {
+    background: #176CBF;
+}
+.choose-area button.active {
+    background: #3399FF;
+    color: #fff;
 }

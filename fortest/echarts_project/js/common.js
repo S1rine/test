@@ -19,20 +19,16 @@ var majors = [
     ["major12", "major13", "major14"],
     ["major15", "major16", "major17", "major18"]
 ];
-function checkschool(x) {
+function checkunit(x) {
     var selects = document.getElementById("studentMajor");
+    console.log(selects);
     if (selects.childElementCount != 0) {
-        // for(var i=0;i<selects.childElementCount;i++){
-        //     selects.childNodes
-        // }
         selects.options.length = 0;
     }
     var length = 0;
     for (var i = 1; i < x; i++) {
         length += majors[i - 1].length;
-        // console.log(length);
     }
-    // console.log(length);
     for (var i = 0; i < majors[x - 1].length; i++) {
         var item = document.createElement("option");
         item.value = length + i + 1;

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>企业签退导出</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body onload="timeOfToday()">
+    <div class="container">
+        <div class="main-area" style="max-width: 1000px;">
+            <div class="view-main"></div>
+            <ul>
+                <li style="width: 46.5%;">
+                    <input type="date" id="time">
+                </li>
+                <li style="width: 46.5%;">
+                    <a id="view-main" onclick="companyview()" style="cursor: pointer;">更新</a>
+                </li>
+                <li style="width: 46.5%;">
+                    <a style="cursor: pointer;">导出为excel文件</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/companyview.js"></script>
+</body>
+
+</html>
