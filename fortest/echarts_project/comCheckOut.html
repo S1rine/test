@@ -2,54 +2,51 @@
 <html lang="zh-cn">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>企业签到页面</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/common.css">
+    <title>企业签退</title>
 </head>
 
 <body>
-    <!-- 表单部分 -->
     <div class="container">
         <div class="main-area">
-
-            <h1>企业入场登记</h1>
-            <form class="form-area" action="http://47.101.143.52:8080/comCheckIn/check-in" method="post">
+            <h1>企业签退登记</h1>
+            <form class="form-area" action="http://47.101.143.52:8080/comCheckOut/check-out" method="POST">
                 <div class="left">
-                    <div>企业名称: </div>
-                    <div>企业类型: </div>
-                    <div>联系人: </div>
-                    <div>联系电话: </div>
+                    <div>企业名称:</div>
+                    <!-- <div>企业类型:</div> -->
+                    <div>简历数量:</div>
+                    <div>意向人数:</div>
                 </div>
                 <div class="right">
                     <div class="form-item">
                         <input name="companyName" type="text" oninput="checkvalue()">
                     </div>
-                    <div class="form-item">
+                    <!-- <div class="form-item">
                         <select name="companyType">
                             <option value="1">类别1</option>
                             <option value="2">类别2</option>
                             <option value="3">类别3</option>
                             <option value="4">类别4</option>
                             <option value="5">类别5</option>
-                            <option value="6">类别6</option>
-                            <option value="7">类别7</option>
                         </select>
+                    </div> -->
+                    <div class="form-item">
+                        <input name="curriculumVitaeNum" type="text" oninput="checkvalue()">
                     </div>
                     <div class="form-item">
-                        <input name="contact" type="text" oninput="checkvalue()">
-                    </div>
-                    <div class="form-item">
-                        <input name="phoneNumber" type="text" oninput="checkvalue()">
+                        <input name="intention" type="text" oninput="checkvalue()">
                     </div>
                 </div>
-                <button disabled>签到</button>
+                <button disabled>签退</button>
             </form>
         </div>
     </div>
+
     <script src="./js/common.js"></script>
 </body>
 

@@ -25,13 +25,14 @@ function checkunit(x) {
     if (selects.childElementCount != 0) {
         selects.options.length = 0;
     }
+    x=parseInt(x.slice(2,3));
     var length = 0;
     for (var i = 1; i < x; i++) {
         length += majors[i - 1].length;
     }
     for (var i = 0; i < majors[x - 1].length; i++) {
         var item = document.createElement("option");
-        item.value = length + i + 1;
+        item.value = majors[x - 1][i];
         item.innerHTML = majors[x - 1][i];
         selects.appendChild(item);
     }

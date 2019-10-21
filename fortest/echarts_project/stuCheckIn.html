@@ -16,7 +16,7 @@
         <div class="main-area">
             <h1>学生入场登记</h1>
             <!-- 表单部分 -->
-            <form class="form-area" action="http://47.101.143.52:8080/stuCheckIn/add" method="post">
+            <form class="form-area" action="http://47.101.143.52:8080/stuCheckIn/add" method="POST">
                 <div class="left">
                     <div>姓名:</div>
                     <div>学号:</div>
@@ -32,20 +32,20 @@
                     </div>
                     <div class="form-item">
                         <select name="unitName" onchange="checkunit(this.value)">
-                            <option value="1">学院1</option>
-                            <option value="2">学院2</option>
-                            <option value="3">学院3</option>
-                            <option value="4">学院4</option>
-                            <option value="5">学院5</option>
+                            <option value="学院1">学院1</option>
+                            <option value="学院2">学院2</option>
+                            <option value="学院3">学院3</option>
+                            <option value="学院4">学院4</option>
+                            <option value="学院5">学院5</option>
                         </select>
                     </div>
                     <div class="form-item">
                         <select name="major" id="studentMajor" class="choose-items">
-                            <option value="1">major1</option>
-                            <option value="2">major2</option>
-                            <option value="3">major3</option>
-                            <option value="4">major4</option>
-                            <option value="5">major5</option>
+                            <option value="major1">major1</option>
+                            <option value="major2">major2</option>
+                            <option value="major3">major3</option>
+                            <option value="major4">major4</option>
+                            <option value="major5">major5</option>
                         </select>
                     </div>
                 </div>
