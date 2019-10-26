@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>登陆注册</title>
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/login.css">
+	</head>
+	<body>
+		<div class="login">
+			<!-- 切换登录/注册 -->
+			<div class="switch-menu clearfix">
+				<span class="left selected iconfont icon-zhucezhuanhuan-copy">注册</span>
+				<span class="right  iconfont icon-denglu">登录</span>
+			</div>
+			<form class="loginform">
+				<!-- 注册 -->
+				<div class="">
+					<div class="form-item">
+						<input type="text" placeholder="手机号 / 邮箱">
+					</div>
+					<div class="form-item">
+						<input type="password" id="pwd" placeholder="密码">
+					</div>
+					<div class="form-item">
+						<input type="password" id="confirm-pwd" placeholder="确认密码">
+					</div>
+					<div class="form-item">
+						<button disabled class="btn">注册</button>
+					</div>
+				</div>
+				<!-- 登录 -->
+				<div class="hidden">
+					<div class="form-item clearfix">
+						<a href="" class="right">找回密码</a>
+					</div>
+					<div class="form-item">
+						<input type="text" placeholder="手机号">
+
+					</div>
+					<div class="form-item">
+						<input type="password" placeholder="密码">
+					</div>
+					<div class="form-item">
+						<button disabled class="btn">
+							登录
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

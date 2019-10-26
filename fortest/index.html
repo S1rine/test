@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>请假系统</title>
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/index.css">
+	</head>
+	<body>
+		<div class="container">
+			<div id="page_header">
+				<!-- 请假审批界面 -->
+				<header id="main_header" class="header ">
+					<div class="title">
+						<span>请假审批</span>
+						<div class="title-right">
+							<span id="main_add">新增审批</span>
+						</div>
+					</div>
+				</header>
+				<!-- 新增审批界面 -->
+				<header id="add_header" class="header hidden">
+					<div class="title">
+						<div class="title-left">
+							<span class="iconfont icon-fanhui">返回</span></div>
+						<span>新增请假申请</span>
+					</div>
+				</header>
+				<!-- 审批界面 -->
+				<header id="wait_header" class="header hidden">
+					<div class="title">
+						<div class="title-left">
+							<span class="iconfont icon-fanhui">返回</span></div>
+						<span>审批界面</span>
+					</div>
+				</header>
+				<!-- 个人设置界面 -->
+				<header id="set_header" class="header hidden">
+					<div class="title">
+						<span>个人设置</span>
+					</div>
+				</header>
+				<!-- 用户信息界面 -->
+				<header id="msg_header" class="header hidden">
+					<div class="title">
+						<div class="title-left">
+							<span class="iconfont icon-fanhui">返回</span></div>
+						<span>用户信息</span>
+					</div>
+				</header>
+				<!-- 信息修改界面 -->
+				<header id="msgchange_header" class="header hidden"></header>
+				<!-- 信息反馈界面 -->
+				<header id="fedb_header" class="header hidden">
+					<div class="title">
+						<div class="title-left">
+							<span class="iconfont icon-fanhui">返回</span></div>
+						<span>信息反馈</span>
+					</div>
+				</header>
+			</div>
+			<div id="page_body">
+				<!-- 请假审批界面 -->
+				<div id="main_body" class="body ">
+					<div class="switch-menu">
+						<div id="swtich_first" class="selected">
+							<span>待审批</span>
+						</div>
+						<div id="swtich_second">
+							<span>审批通过</span>
+						</div>
+						<div id="swtich_third">
+							<span>审批不通过</span>
+						</div>
+					</div>
+					<div class="main_list">
+						<div class="list-item">
+							<div class="list-row clearfix">
+								<span id="list-name" class="left">张三1827xxxx</span>
+								<span id="list-time" class="right">2019-10-23 08:08:23</span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假时间段：<span id="list-desc1">2019-10-24~2019-10-25</span></span>
+
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假类型：<span id="list-desc2">事假</span></span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假原因：<span id="list-desc3">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></span>
+							</div>
+						</div>
+						<div class="list-item">
+							<div class="list-row clearfix">
+								<span id="list-name" class="left">张三1827xxxx</span>
+								<span id="list-time" class="right">2019-10-23 08:08:23</span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假时间段：<span id="list-desc1">2019-10-24~2019-10-25</span></span>
+
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假类型：<span id="list-desc2">事假</span></span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假原因：<span id="list-desc3">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></span>
+							</div>
+						</div>
+						<div class="list-item">
+							<div class="list-row clearfix">
+								<span id="list-name" class="left">张三1827xxxx</span>
+								<span id="list-time" class="right">2019-10-23 08:08:23</span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假时间段：<span id="list-desc1">2019-10-24~2019-10-25</span></span>
+
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假类型：<span id="list-desc2">事假</span></span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假原因：<span id="list-desc3">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></span>
+							</div>
+						</div>
+						<div class="list-item">
+							<div class="list-row clearfix">
+								<span id="list-name" class="left">张三1827xxxx</span>
+								<span id="list-time" class="right">2019-10-23 08:08:23</span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假时间段：<span id="list-desc1">2019-10-24~2019-10-25</span></span>
+
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假类型：<span id="list-desc2">事假</span></span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假原因：<span id="list-desc3">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></span>
+							</div>
+						</div>
+						<div class="list-item hidden">
+							<div class="list-row clearfix">
+								<span id="list-name" class="left">张三1827xxxx</span>
+								<span id="list-time" class="right">2019-10-23 08:08:23</span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假时间段：<span id="list-desc1">2019-10-24~2019-10-25</span></span>
+
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假类型：<span id="list-desc2">事假</span></span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假原因：<span id="list-desc3">xxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></span>
+							</div>
+						</div>
+						<div class="list-item hidden">
+							<div class="list-row clearfix">
+								<span id="list-name" class="left">张三1827xxxx</span>
+								<span id="list-time" class="right">2019-10-23 08:08:23</span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假时间段：<span id="list-desc1">2019-10-24~2019-10-25</span></span>
+
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假类型：<span id="list-desc2">事假</span></span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假原因：<span id="list-desc3">xxxxxxxxxxxxxxxxxxxxxxxxxx</span></span>
+							</div>
+						</div>
+						<div class="list-item hidden">
+							<div class="list-row clearfix">
+								<span id="list-name" class="left">张三1827xxxx</span>
+								<span id="list-time" class="right">2019-10-23 08:08:23</span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假时间段：<span id="list-desc1">2019-10-24~2019-10-25</span></span>
+
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假类型：<span id="list-desc2">事假</span></span>
+							</div>
+							<div class="list-row">
+								<span class="list-desc">请假原因：<span id="list-desc3">xxxxxxxxxxxxxxxxxxxxxxx</span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 新增审批界面 -->
+				<div id="add_body" class="body hidden">
+					<div id="add_time" class="add_list">
+						<div class="add_row">
+							<div class="time_label start">
+								<span class="required">请假开始时间</span>
+							</div>
+							<input type="date">
+						</div>
+						<div class="add_row">
+							<div class="time_label end">
+								<span class="required">请假结束时间</span>
+							</div>
+							<input type="date">
+						</div>
+					</div>
+					<div id="add_class" class="add-item">
+						<div class="title">
+							<span>选择课程</span>
+						</div>
+						<div class="add_list">
+							<div class="list-item">
+								<div class="check">
+									<span class="iconfont icon-xuanze"></span>
+								</div>
+								<div class="class-msg">
+									<div class="msg-row clearfix">
+										<span class="class-name left">形式与政策</span>
+										<span class="teacher-name right">李四</span>
+									</div>
+									<div class="msg-row">
+										<span class="class-day">周一</span>
+										<span class="class-order">第8-9节</span>
+									</div>
+									<div class="msg-row">
+										<span class="class-time">2019-10-10</span>
+										<span class="class-week">第7周</span>
+									</div>
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="check">
+									<span class="iconfont icon-kongxinyuan"></span>
+								</div>
+								<div class="class-msg">
+									<div class="msg-row clearfix">
+										<span class="class-name left">形式与政策</span>
+										<span class="teacher-name right">李四</span>
+									</div>
+									<div class="msg-row">
+										<span class="class-day">周一</span>
+										<span class="class-order">第8-9节</span>
+									</div>
+									<div class="msg-row">
+										<span class="class-time">2019-10-10</span>
+										<span class="class-week">第7周</span>
+									</div>
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="check">
+									<span class="iconfont icon-kongxinyuan"></span>
+								</div>
+								<div class="class-msg">
+									<div class="msg-row clearfix">
+										<span class="class-name left">形式与政策</span>
+										<span class="teacher-name right">李四</span>
+									</div>
+									<div class="msg-row">
+										<span class="class-day">周一</span>
+										<span class="class-order">第8-9节</span>
+									</div>
+									<div class="msg-row">
+										<span class="class-time">2019-10-10</span>
+										<span class="class-week">第7周</span>
+									</div>
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="check">
+									<span class="iconfont icon-kongxinyuan"></span>
+								</div>
+								<div class="class-msg">
+									<div class="msg-row clearfix">
+										<span class="class-name left">形式与政策</span>
+										<span class="teacher-name right">李四</span>
+									</div>
+									<div class="msg-row">
+										<span class="class-day">周一</span>
+										<span class="class-order">第8-9节</span>
+									</div>
+									<div class="msg-row">
+										<span class="class-time">2019-10-10</span>
+										<span class="class-week">第7周</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="add_type" class="add-item">
+						<div class="title">
+							<span>请假类型</span>
+						</div>
+						<div class="add_list">
+							<div class="list-item">
+								<div class="check">
+									<span class="iconfont icon-kongxinyuan"></span>
+								</div>
+								<div class="list-type">
+									<span>事假</span>
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="check">
+									<span class="iconfont icon-kongxinyuan"></span>
+								</div>
+								<div class="list-type">
+									<span>病假</span>
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="check">
+									<span class="iconfont icon-kongxinyuan"></span>
+								</div>
+								<div class="list-type">
+									<span>其他原因</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="add_reason" class="add-item">
+						<div class="title">
+							<span>请假原因</span>
+						</div>
+						<div class="reason">
+							<textarea name="" id="" cols="30" rows="3" placeholder="请输入请假原因"></textarea>
+						</div>
+					</div>
+					<div id="add_prove" class="add-item">
+						<div class="title">
+							<span>证明文件</span>
+						</div>
+					</div>
+					<button class="add_submit">保存</button>
+				</div>
+				<!-- 审批界面 -->
+				<!-- 个人设置界面 -->
+				<div id="set_body" class="body hidden">
+					<div class="set_list">
+						<div class="set_item">
+							<div class="title">个人信息</div>
+							<div class="set_row">
+								<span class="set_name iconfont icon-yonghu"><span class="set_info">张三</span></span>
+							</div>
+							<div class="set_row">
+								<span class="set_msg iconfont icon-zhanghaoguanli"><span class="set_info">信息修改</span></span>
+							</div>
+						</div>
+						<div class="set_item">
+							<div class="title">用户反馈</div>
+							<div class="set_row">
+								<span class="set_fedback iconfont icon-wentifankui"><span class="set_info">问题反馈</span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 用户信息界面 -->
+				<!-- 信息修改界面 -->
+				<!-- 信息反馈界面 -->
+			</div>
+			<div id="page_footer">
+				<footer class="footer">
+					<div class="footer_left">
+						<span class="iconfont icon-Shapecopy selected">请假</span>
+					</div>
+					<div class="footer_right">
+						<span class="iconfont icon-yonghu">我</span>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
