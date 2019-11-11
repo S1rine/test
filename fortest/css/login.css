@@ -1,6 +1,29 @@
 /* 页面统一样式 */
-
-.login {
+body {
+	background: #f8f8f8;
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+.form-horizontal {
+	max-width: 330px;
+	padding: 15px;
+	max-height: 240px;
+	position: fixed;
+	top: 20%;
+	/* bottom: 0; */
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.form-title {
+	width: 300px;
+}
+.form-horizontal input {
+	margin: 10px 0;
+}
+.glyphicon-user:before {
+    vertical-align: -3px;
+}
+/* .login {
 	background: #fff;
 	padding: 20px;
 	max-width: 50vw;
@@ -42,11 +65,11 @@ input {
 .btn:disabled {
 	background: rgba(51, 136, 255, .5);
 	cursor: default;
-}
+} */
 
 /* 页面统一样式结束 */
 
-
+/* 
 .login .switch-menu {
 	width: 100%;
 	border-bottom: 1px solid #ececec;
@@ -74,3 +97,4 @@ input {
 	width: 100%;
 	font-size: 15px;
 }
+ */

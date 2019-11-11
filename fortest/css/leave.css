@@ -1,0 +1,145 @@
+
+@media (min-width: 768px){
+ul.navbar-nav {
+    float: none;
+}
+}
+.panel-primary {
+	border-radius: 0;
+}
+
+.page-header {
+	margin: 0;
+	color: #fff;
+	height: 8vh;
+	line-height: 8vh;
+	font-size: 20px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.add-leave {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	color: #fff;
+	font-size: 13px;
+}
+
+.return-leave {
+	position: absolute;
+	top: 3.5vh;
+	left: 10px;
+	color: #fff;
+	font-size: 13px;
+}
+
+.glyphicon:before {
+	vertical-align: -2px;
+}
+
+.nav-tabs>li {
+	width: 33.3%;
+}
+
+.jumbotron {
+	min-height: 84vh;
+	padding: 15px 15px;
+	margin-top: 8vh;
+	margin-bottom: 8vh;
+}
+
+.navbar {
+	min-height: 8vh;
+}
+
+.navbar ul.nav {
+	margin: 0;
+}
+
+.navbar .nav li,
+.navbar .nav li a {
+	display: inline-block;
+	width: 49%;
+	height: 8vh;
+	line-height: 6vh;
+}
+
+.navbar .nav li a {
+	width: 100%;
+}
+
+.navbar .nav li.active {
+	background-color: #e7e7e7;
+}
+
+.tab-content .tab-pane {
+	overflow-y: scroll;
+}
+
+.form-group .col-sm-10 {
+	width: 68%;
+	display: inline-block;
+}
+
+.form-group .panel-heading {
+	border-left: 5px solid #1890FF;
+}
+
+.coursemsg,
+.leavetype {
+	margin-left: 20px;
+	width: 80%;
+	display: inline-block;
+}
+input[type="checkbox"] {
+	vertical-align: 23px;
+}
+textarea {
+	resize: none;
+}
+
+.home a {
+	color: inherit;
+	display: inline-block;
+	width: 90%;
+}
+
+.nofoot .jumbotron {
+	min-height: 92vh;
+}
+
+#detail {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(255, 255, 255, .7);
+	z-index: 1031;
+	padding: 10vh 5vh;
+}
+
+#detail .panel {
+	height: 80vh;
+	overflow: hidden;
+	margin-bottom: 0;
+}
+#detail .panel-body {
+	height: 75vh;
+	overflow: auto;
+}
+
+.head {
+	border-left: 5px solid #1890FF;
+	padding: 5px;
+}
+.close {
+	position: absolute;
+	top: 11vh;
+	right: 6vh;
+	color: red;
+}

@@ -175,20 +175,21 @@
 	font-size: 18px;
 }
 
-.body .add_list .check {
+.body .add_list .checkbtn {
 	width: 50px;
 	text-align: center;
+	cursor: pointer;
 }
 
-.body .add_list .check .icon-xuanze {
+.body .add_list .checkbtn .icon-xuanze {
 	color: #38f;
 }
 
-.body #add_class .add_list .check span {
+.body #add_class .add_list .checkbtn span {
 	line-height: 70px;
 }
 
-.body .add_list .check span {
+.body .add_list .checkbtn span {
 	display: block;
 	height: 100%;
 }

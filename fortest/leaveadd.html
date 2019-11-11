@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>请假系统</title>
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/leave.css">
+	</head>
+	<body>
+		<div class="nofoot">
+			<div class="page-header bg-primary">
+				<div class="text-center">新增审批</div>
+				<a href="leave.html" class="return-leave glyphicon glyphicon-menu-left">返回</a>
+			</div>
+			<div class="jumbotron container">
+				<form action="" class="form-horizontal">
+					<div class="form-group">
+						<label for="time-start" class="col-sm-2 control-label">请假开始时间</label>
+						<div class="col-sm-10">
+							<input type="date" class="form-control" id="time-start">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="time-end" class="col-sm-2 control-label">请假结束时间</label>
+						<div class="col-sm-10">
+							<input type="date" class="form-control" id="time-end">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								选择课程
+							</div>
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item cleafix">
+										<input type="checkbox" name="leavecourse" value="形式与政策" checked>
+										<div class="coursemsg clearfix">
+											<div class="row clearfix">
+												<span class="col-xs-8 class-name">形式与政策</span>
+												<span class="col-xs-4 teacher-name text-right">李四</span>
+											</div>
+											<div class="row">
+												<span class="col-xs-12 class-day">周一
+													<span class="class-order">第8-9节</span></span>
+											</div>
+											<div class="row">
+												<span class="col-xs-12 class-time">2019-10-10
+													<span class="class-week">第7周</span></span>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<input type="checkbox" name="leavecourse" value="形式与政策">
+										<div class="coursemsg clearfix">
+											<div class="row clearfix">
+												<span class="col-xs-8 class-name">形式与政策</span>
+												<span class="col-xs-4 teacher-name text-right">李四</span>
+											</div>
+											<div class="row">
+												<span class="col-xs-12 class-day">周一
+													<span class="class-order">第8-9节</span></span>
+											</div>
+											<div class="row">
+												<span class="col-xs-12 class-time">2019-10-10
+													<span class="class-week">第7周</span></span>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<input type="checkbox" name="leavecourse" value="形式与政策">
+										<div class="coursemsg clearfix">
+											<div class="row clearfix">
+												<span class="col-xs-8 class-name">形式与政策</span>
+												<span class="col-xs-4 teacher-name text-right">李四</span>
+											</div>
+											<div class="row">
+												<span class="col-xs-12 class-day">周一
+													<span class="class-order">第8-9节</span></span>
+											</div>
+											<div class="row">
+												<span class="col-xs-12 class-time">2019-10-10
+													<span class="class-week">第7周</span></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								请假类型
+							</div>
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item cleafix">
+										<input type="radio" name="leavetype" value="0" checked>
+										<div class="leavetype">
+											病假
+										</div>
+									</li>
+									<li class="list-group-item">
+										<input type="radio" name="leavetype" value="1">
+										<div class="leavetype">
+											事假
+										</div>
+									</li>
+									<li class="list-group-item">
+										<input type="radio" name="leavetype" value="2">
+										<div class="leavetype">
+											其他原因
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								请假原因
+							</div>
+							<div class="panel-body">
+								<textarea class="form-control" rows="3"></textarea>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								证明文件
+							</div>
+							<div class="panel-body">
+								<div>
+									<input type="file" name="file" class="form-control" id="zx_img" style="padding: 0px;" placeholder="&nbsp;上传文件">
+									<div>
+										<img id="img_preview" data-src="" src="" data-holder-rendered="true" style="width: 100px; display: block;">
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="alert alert-danger hidden">审批未填写完整</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-success btn-block">提交</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+		<script src="./js/jquery-3.4.1.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script>
+			//上传图片选择文件改变后刷新预览图
+			$("#zx_img").change(function(e) {
+				//获取目标文件
+				var file = e.target.files || e.dataTransfer.files;
+				//如果目标文件存在
+				if (file) {
+					//定义一个文件阅读器
+					var reader = new FileReader();
+					//文件装载后将其显示在图片预览里
+					reader.onload = function() {
+						$("#img_preview").attr("src", this.result);
+					}
+					//装载文件
+					reader.readAsDataURL(file[0]);
+				}
+			});
+		</script>
+		</script>
+	</body>
+</html>
